@@ -57,7 +57,7 @@ public class DictionnaireNaif implements Dictionnaire {
         return w;*/
         int j=0,k=0;
         while(j!=40*N && j!=i){
-            while(t[k]!=0){
+            while(t[k]!='\0'){
                 k=k+1;
             }
             j=j+1;
@@ -77,7 +77,7 @@ public class DictionnaireNaif implements Dictionnaire {
     public int nbMots() {
         int i=0,j=0;
         while(i!=40*N){
-            while(t[j]!=0){
+            while(t[j]!='\0'){
                 j=j+1;
             }
             i=i+1;
