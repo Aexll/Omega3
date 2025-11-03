@@ -26,7 +26,7 @@ public class DictionnaireNaif implements Dictionnaire {
 
     @Override
     public void vider() {
-        return;
+        this.l = 0;
     }
 
     @Override
