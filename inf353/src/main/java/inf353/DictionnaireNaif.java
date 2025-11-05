@@ -48,23 +48,13 @@ public class DictionnaireNaif implements Dictionnaire {
 
     @Override
     public String motIndice(int i) {            
-      /*  String w = "";
+        String w = "";
         int j = 0;
         while(t[i*40+j]!='\0'){
             w=w+t[i*40+j];
             j=j+1;
         }
-        return w;*/
-        int j=0,k=0;
-        while(j!=40*N && j!=i){
-            while(t[k]!='\0'){
-                k=k+1;
-            }
-            j=j+1;
-        }
-        if(j!=40*N){
-            return j;
-        }
+        return w;
         
     }
 
@@ -76,7 +66,8 @@ public class DictionnaireNaif implements Dictionnaire {
     @Override
     public int nbMots() {
         int i=0,j=0;
-        while(i!=40*N){
+        while(i!=l){
+            j=40*i;
             while(t[j]!='\0'){
                 j=j+1;
             }
