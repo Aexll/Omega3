@@ -60,8 +60,37 @@ public class DictionnaireNaif implements Dictionnaire {
 
     @Override
     public boolean contient(String m) {
-        return false;
+        if(this.l == 0){
+            return false;
+        }else{
+            int i = 0;
+            while (i < l) {
+                int debut = i * 40;
+                // trouver la longueur réelle du mot dans le dictionnaire
+                int longueurMotDico = 0;
+                while (longueurMotDico < 39 && t[debut + longueurMotDico] != '\0') {
+                    longueurMotDico = longueurMotDico + 1;
+                }
+
+                // comparer les longueurs : mot paramètre doit correspondre exactement
+                if (m.length() == longueurMotDico) {
+                    int j = 0;
+                    // comparer caractère par caractère
+                    while (j < m.length() && t[debut + j] == m.charAt(j)) {
+                        j = j + 1;
+                    }
+                    if (j == m.length()) {
+                        return true; // mot trouvé
+                    }
+                }
+
+                i = i + 1; // passer au mot suivant
+            }
+
+            return false; // mot non trouvé
+        }
     }
+
 
     @Override
     public int nbMots() {
