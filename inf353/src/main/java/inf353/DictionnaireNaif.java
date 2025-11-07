@@ -43,7 +43,14 @@ public class DictionnaireNaif implements Dictionnaire {
 
     @Override
     public int indiceMot(String m) {
-        return 0;
+        int i = 0;
+        while (i != l) {
+            if (motIndice(i).equals(m)) {
+                return i;
+            }
+            i = i + 1;
+        }
+        return -1;
     }
 
     @Override

@@ -8,7 +8,7 @@ import inf353.Dictionnaire;
 public class DictionaireNaifTest_contient {
 
 @Test
-public boolean contient(String m)
+public void contient(String m)
 {
   DictionnaireNaif d = new DictionnaireNaif();
 
@@ -19,11 +19,11 @@ public boolean contient(String m)
 
   d.print();
 
-assertEquals("Le dictionnaire contient: aaa", true, d.contient("aaa"));
-assertEquals("Le dictionnaire contient: un mot de longeur 39", true, d.contient("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
-assertEquals("Le dictionnaire contient: un mot de longeur 40", true, d.contient("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"));
-assertEquals("Le dictionnaire contient: """, true, d.contient(""));
-assertEquals("Le dictionnaire contient: un mot de longeur > 40", true, d.contient("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab");
+  assertEquals("Le dictionnaire contient: aaa", true, d.contient("aaa"));
+  assertEquals("Le dictionnaire contient: un mot de longeur 39", true, d.contient("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+  assertEquals("Le dictionnaire contient: un mot de longeur 40", true, d.contient("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"));
+  assertEquals("Le dictionnaire contient: ''", true, d.contient(""));
+  assertEquals("Le dictionnaire contient: un mot de longeur > 40", true, d.contient("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"));
 
-
+  }
 }
