@@ -38,7 +38,7 @@ public class DictionnaireNaif implements Dictionnaire {
         }
         t[i + l * 40] = '\0';
         l = l + 1;    
-        return;
+    
     }
 
     @Override
@@ -67,15 +67,15 @@ public class DictionnaireNaif implements Dictionnaire {
 
     @Override
     public boolean contient(String m) {
-        if(this.l == 0){
+        if(this.l == 0 || m.length() > 39){
             return false;
         }else{
             int i = 0;
-            while (i < l) {
+            while (i != l) {
                 int debut = i * 40;
                 // trouver la longueur réelle du mot dans le dictionnaire
                 int longueurMotDico = 0;
-                while (longueurMotDico < 39 && t[debut + longueurMotDico] != '\0') {
+                while (longueurMotDico != 39 && t[debut + longueurMotDico] != '\0') {
                     longueurMotDico = longueurMotDico + 1;
                 }
 
@@ -83,7 +83,7 @@ public class DictionnaireNaif implements Dictionnaire {
                 if (m.length() == longueurMotDico) {
                     int j = 0;
                     // comparer caractère par caractère
-                    while (j < m.length() && t[debut + j] == m.charAt(j)) {
+                    while (j != m.length() && t[debut + j] == m.charAt(j)) {
                         j = j + 1;
                     }
                     if (j == m.length()) {
